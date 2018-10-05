@@ -20,7 +20,9 @@ export default {
   },
   resolve(root, params) {
     return UserModal.findByIdAndUpdate(params.id,{ 
-
+      $set:{ ...params.data }
     })
+    .then(data => UserModal.findById(data.id).exec())
+    .catch(err => new Error('Couldnt Update user data'))
   }
 }
