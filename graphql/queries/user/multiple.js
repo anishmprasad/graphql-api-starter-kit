@@ -1,7 +1,7 @@
 import {
   GraphQLList
 } from 'graphql';
-import { userType } from '../../types';
+import { userType } from '../../types/user';
 import UserModal from '../../modals/user';
 
 export default {
